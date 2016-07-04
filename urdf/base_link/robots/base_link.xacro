@@ -1,0 +1,72 @@
+<robot
+  name="car_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+ <xacro:include filename="$(find hansagv_description)/urdf/right_wheel/robots/right_wheel.xacro" />
+ <xacro:include filename="$(find hansagv_description)/urdf/left_wheel/robots/left_wheel.xacro" />
+
+ <xacro:include filename="$(find hansagv_description)/urdf/blue_link/robots/blue_link.xacro" />
+ <xacro:include filename="$(find hansagv_description)/urdf/gray_link/robots/gray_link.xacro" />
+ <xacro:include filename="$(find hansagv_description)/urdf/orange_link/robots/orange_link.xacro" />
+ <xacro:include filename="$(find hansagv_description)/urdf/red_link/robots/red_link.xacro" />
+ <xacro:include filename="$(find hansagv_description)/urdf/green_link/robots/green_link.xacro" />
+
+
+
+ <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+      <origin
+        xyz="0 0 ${0.327-0.0102}"
+        rpy="-1.57 0 3.14" />
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000912770736314369 0.0923245159009546 0.000934019706656068"
+        rpy="0 0 0" />
+      <mass
+        value="85.6964129990125" />
+      <inertia
+        ixx="3.18362155166473"
+        ixy="0.000551641696979483"
+        ixz="-0.0243006749925325"
+        iyy="7.20119199633985"
+        iyz="0.000999068664325388"
+        izz="4.64095436445845" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hansagv_description/urdf/base_link/meshes/base_link.STL"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hansagv_description/urdf/base_link/meshes/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="laser"/>
+  <joint name="laser_to_base" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="laser"/>
+        <origin xyz="0.345 0 0.160" rpy="0 0 0"/>
+   </joint>
+</robot>
