@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>hansagv_description</name>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <description>The visual model of X-1 plus</description>
 
   <maintainer email="liucong.cdhaw@gmail.com">Cong Liu</maintainer>
