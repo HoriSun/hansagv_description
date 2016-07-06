@@ -14,12 +14,12 @@ tracks:
       :{release_inc}
     devel_branch: null
     last_version: 0.0.1
-    name: upstream
+    name: hansagv_description
     patches: null
     release_inc: '0'
     release_repo_url: null
     release_tag: :{version}
     ros_distro: indigo
     vcs_type: git
-    vcs_uri: https://github.com/hans-x-lab/hansagv_description
+    vcs_uri: ~/github/src/hansagv_description
     version: :{auto}
